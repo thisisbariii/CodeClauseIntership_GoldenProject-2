@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Generator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container" id="cv-form">
+        <div class="div1">
+            <h1 class="text-center my-2">RESUME BUILDER</h1>
+            
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Personal Infromation</h3>
+                <div class="form-group my-3">
+                    <label for="nameField">YOUR NAME</label>
+                    <input type="text" placeholder="Enter here" id="name" class="form-control">
+                </div>
+                <div class="form-group my-3">
+                    <label for="contactField">YOUR CONTACT</label>
+                    <input type="text" placeholder="Enter here" id="contact" class="form-control">
+                </div>
+                <div class="form-group my-3">
+                    <label for="emailField">EMAIL ADDRESS</label>
+                    <input type="email" placeholder="Enter here" id="email" class="form-control">
+                </div>
+                <div class="form-group my-3 ">
+                    <label for="nameField">YOUR ADDRESS</label>
+                    <textarea placeholder="Enter here" id="address" class="form-control" rows="5"></textarea>
+                </div>
+                <hr>
+                <p class="text-secondary my-3"> IMPORTANT LINKS TO CONNECT</p>
+                <div class="form-group my-3">
+                    <label for="linkedField">LINKEDIN</label>
+                    <input type="text" placeholder="Enter here" id="linkedin" class="form-control">
+                </div>
+                <div class="form-group my-3">
+                    <label for="gitField">GITHUB</label>
+                    <input type="text" placeholder="Enter here" id="git" class="form-control">
+                </div>
+                <div class="form-group my-3">
+                    <label for="driveField">GOOGLE DRIVE</label>
+                    <input type="text" placeholder="Enter here" id="drive" class="form-control">
+                </div>
+
+
+
+            </div>
+            <div class="col-md-6">
+                <h3>Professional Infromation</h3>
+                <div class="form-group my-3 ">
+                    <label for="objective">OBJECTIVE</label>
+                    <textarea placeholder="Enter here" id="objective" class="form-control" rows="5"></textarea>
+                </div>
+                <hr>
+
+                <div class="form-group my-3" id="eq">
+                    <label for="">EDUCATION</label>
+                    <input type="text" placeholder="Enter here"  class="form-control education ">
+                </div>
+                <div class="container text-center">
+                    <button onclick="addInput()" class="btn btn-primary btn-sm ">ADD FIELDS</button>
+                </div>
+                <hr>
+                <div class="form-group my-3" id="we">
+                    <label for="">CERTIFICATES</label>
+                    <input type="text" placeholder="Enter here" class="form-control certificates ">
+                </div>
+                <div class="container text-center">
+                    <button onclick="addCertificates()" class="btn btn-primary btn-sm ">ADD CERTIFICATES </button>
+                </div>
+                <hr>
+                <div class="form-group my-3" id="aq">
+
+                    <label for="">SKILLS</label>
+                    <input type="text" placeholder="Enter here" class="form-control skills ">
+                </div>
+                <div class="container text-center">
+                    <button onclick="addSkill()" class="btn btn-primary btn-sm ">ADD SKILLS </button>
+                </div>
+                <hr>
+                <div class="form-group my-3" id="pj">
+
+                    <label for="">PROJECTS</label>
+                    <input type="text" placeholder="Enter here" class="form-control projects ">
+                </div>
+                <div class="container text-center">
+                    <button onclick="addProject()" class="btn btn-primary btn-sm ">ADD PROJECTS </button>
+                </div>
+
+
+
+            </div>
+
+        </div>
+        <hr>
+        <div class="text-center">
+            <button onclick="generateCV()" class="btn btn-primary btn-sm">GENERATE CV</button>
+        </div>
+    </div>
+
+
+    <div class="container  " id="cv-template">
+
+        <div class="row">
+            <div class="col-md-4 text-center py-5 background">
+                <img src="img.jpg" class="img-fluid myimg">
+                <div class="container ">
+                    <p id="nameT1">JOHN SMITH</p>
+                    <p id="contactT">1234567890</p>
+                    <p id="emailT">abc@gmail.com</p>
+                    <p id="addressT">malibu street, vice city</p>
+                </div>
+                <hr>
+                <div class="container none">
+                 <ul id="skillT">
+                    <li>python</li>
+                    <li>python</li>
+                    <li>python</li>
+                    <li>python</li>
+                </ul>
+
+                </div>
+                <hr>
+                <p><a id="linkedinT" href="#1">linkedin.com</a></p>
+                <p><a id="gitT" href="#2">github.com</a></p>
+                <p><a id="driveT" href="#3">drive.com</a></p>
+            </div>
+            <div class="col-md-8  py-5 ">
+
+                <h1 class="text-center end" id="nameT2">JOHN SMITH</h1>
+
+                <div class="card mt-4">
+                    <div class="card-header background">
+                        <h3>Objective</h3>
+                    </div>
+                    <div class="card-body">
+                        <p id="objectiveT">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab esse sed unde
+                            architecto id quae
+                            omnis, atque blanditiis iure repellendus aspernatur, error incidunt facere adipisci
+                            perferendis modi reprehenderit accusantium eveniet?</p>
+                    </div>
+                </div>
+                <div class="card mt-4">
+                    <div class="card-header background">
+                        <h3>Education</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul id="educationT">
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem est eveniet reiciendis
+                                ad quae corrupti sint impedit tempore, quas numquam voluptas aliquid similique excepturi
+                                tempora ratione voluptates quis? Quae, doloribus?</li>
+                            <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam recusandae dolor
+                                rem! Soluta dolore, amet totam velit voluptatibus voluptas delectus dicta blanditiis ea
+                                error tempora consequatur nesciunt aut mollitia eveniet?</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card mt-4">
+                    <div class="card-header background">
+                        <h3>Cerificates</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul id="certificateT">
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem est eveniet reiciendis
+                                ad quae corrupti sint impedit tempore, quas numquam voluptas aliquid similique excepturi
+                                tempora ratione voluptates quis? Quae, doloribus?</li>
+                            <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam recusandae dolor
+                                rem! Soluta dolore, amet totam velit voluptatibus voluptas delectus dicta blanditiis ea
+                                error tempora consequatur nesciunt aut mollitia eveniet?</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card mt-4">
+                    <div class="card-header background">
+                        <h3>Projects</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul id="projectT">
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem est eveniet reiciendis
+                                ad quae corrupti sint impedit tempore, quas numquam voluptas aliquid similique excepturi
+                                tempora ratione voluptates quis? Quae, doloribus?</li>
+                            <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam recusandae dolor
+                                rem! Soluta dolore, amet totam velit voluptatibus voluptas delectus dicta blanditiis ea
+                                error tempora consequatur nesciunt aut mollitia eveniet?</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+            </div>
+           
+        </div>
+        <div class="container mt-3 text-center">
+            <button onclick="printCV()" id="btn" class="btn btn-primary btn-sm ">PRINT CV</button>
+        </div>
+   
+    </div>
+   
+
+    <script src="app.js">
+
+    </script>
+</body>
+
+</html>
